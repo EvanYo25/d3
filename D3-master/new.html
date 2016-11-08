@@ -33,7 +33,7 @@
 				var x = d3.scaleTime().range([0, width]);
 				var y = d3.scaleLinear().range([height, 0]);
 				var valueline = d3.line()
-    			.x(function(d,i) { return width; (width/ln)*i})
+    			.x(function(d,i) { return (width/ln)*i; })
     			.y(function(d) { return y(d.close); });
 
     			ctrl.append("path").
