@@ -16,7 +16,19 @@
 						d.close = +d.close;
 					}
 				);
-			}
+				var ctrl = d3.select("body").append("svg").attr("width",800).attr("height",600);
+
+				var x = d3.scaleTime().range([0, width]);
+				var y = d3.scaleLinear().range([height, 0]);
+				var valueline = d3.line()
+    			.x(function(d) { return x(d.date); })
+    			.y(function(d) { return y(d.close); });
+
+    			ctrl.append("path").
+				data([data]).
+				attr("class", "line").
+				attr("d", valueline); 
+				}
 
 		);
 
