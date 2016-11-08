@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -13,14 +14,14 @@
 	</head>
 	<body>
 
-	<script type="text/javascript">
+	<script type="text/javascript">		
+		var width = 800;
+		var height = 600;
 		var parseTime = d3.timeParse("%d-%b-%y");
 		d3.csv("./stocks.csv",
 			function(data)
 			{
 				var ln = data.length;
-				var width = 800;
-				var height = 600;
 				data.forEach(
 					function(d){
 						d.date = parseTime(d.date);
